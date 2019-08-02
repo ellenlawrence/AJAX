@@ -5,11 +5,17 @@
 
 function showFortune(evt) {
 
-    // TODO: get the fortune and show it in the #fortune-text div
+$('#fortune-text').text(evt);
+
 }
 
-$('#get-fortune-button').on('click', showFortune);
 
+function getFortune() {
+  
+  $.get('/fortune', showFortune);
+}
+
+$('#get-fortune-button').on('click', getFortune);
 
 
 
